@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Добавление размера</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="..\bower_components\bootstrap\dist\css\bootstrap.css" />
+</head>
+
+<body>
+    {{getNav}}
+  <h1>Добавление размера</h1>
+  <form action="addSize" method="POST">
+    <label>Name</label>
+    <input name="name" /><br><br>
+    <label>Description</label>
+    <input name="description" /><br><br>
+    <input type="submit" value="Send"  class="btn btn-primary"/>
+    <a href="/sizes" class="btn btn-info">Back to all sizes</a>
+  </form>
+</body>
+<html>

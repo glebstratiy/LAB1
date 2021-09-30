@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Добавление материала</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../bower_components\bootstrap\dist\css\bootstrap.css" />
+</head>
+
+<body>
+    {{getNav}}
+  <h1>Добавление материала</h1>
+  <form action="addMaterial" method="POST">
+    <label>Name</label>
+    <input name="name" /><br><br>
+    <label>Origin</label>
+    <input name="origin" /><br><br>
+    <input type="submit" value="Send" class="btn btn-primary"/>
+    <a href="/materials" class="btn btn-info">Back to all materials</a>
+  </form>
+</body>
+<html>

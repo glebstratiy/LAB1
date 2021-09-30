@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Добавление продукта</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../bower_components\bootstrap\dist\css\bootstrap.css" />
+</head>
+
+<body>
+    {{getNav}}
+  <h1>Добавление продукта</h1>
+  <form action="addProductHandler" method="POST">
+    <label>Description</label>
+    <input name="description" /><br><br>
+    <label>PhotoURL</label>
+    <input name="photoURL" /><br><br>
+    <label>Price</label>
+    <input name="price" type="number" /><br><br>
+    <label>Size</label>
+    <select name = "size">
+      {{#each sizes}}
+      <option value={{_id}}> {{name}}</option>
+      {{/each}}
+    </select> <br> <br>
+    <label>Material</label>
+    <select name="material">
+      {{#each materials}}
+      <option value={{_id}}> {{name}}</option>
+      {{/each}}
+    </select> <br> <br>
+    <input type="submit" value="Send" class="btn btn-primary"/>
+    <a href="/products" class="btn btn-info">Back to all products</a>
+  </form>
+</body>
+<html>

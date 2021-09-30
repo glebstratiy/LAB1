@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Список пользователей</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.css" />
+</head>
+
+<body>
+    {{getNav}}
+  <h1>Список пользователей</h1>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Number of purchases</th>
+      <th></th>
+      <th></th>
+    </tr>
+    {{#each users}}
+    <tr>
+      <td>{{name}}</td>
+      <td>{{address}}</td>
+      <td>{{email}}</td>
+      <td>{{purchases}}</td>
+      <td><a href="/users/updateUser/{{_id}}" class="btn btn-success"> Обновить </a> </td>
+      <td>
+        <form action="/users/removeUserHandler" method="POST">
+          <input type="hidden" name="id" value="{{_id}}" />
+          <button type = "submit" class="btn btn-danger"> Удалить </button>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+  <a href="/users/createUser" class="btn btn-primary">Добавить пользователя</a>
+</body>
+<html>

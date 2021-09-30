@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Список покупок</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.css"/>
+</head>
+
+<body>
+    {{getNav}}
+  <h1>Список покупок</h1>
+  <table class="table">
+    <tr>
+      <th>Date</th>
+      <th>User</th>
+      <th>Product name</th>
+      <th>Product size</th>
+      <th>Product material</th>
+      <th></th>
+      <th></th>
+    </tr>
+    {{#each purchases}}
+    <tr>
+      <td> {{date}}</td>
+      <td> {{user.name}} </td>
+      <td> {{product.description}}</td>
+      <td> {{product.size.name}}</td>
+      <td> {{product.material.name}}</td>
+      <td> <a href="/purchases/updatePurchase/{{_id}}" class="btn btn-success"> Обновить </a> </td>
+      <td>
+        <form action="/purchases/removePurchaseHandler" method="POST">
+          <input type="hidden" name="id" value="{{_id}}" />
+          <button type="submit" class="btn btn-danger"> Удалить </button>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+  <a href="/purchases/createPurchase" class="btn btn-primary">Купить что-то!</a>
+</body>
+<html>

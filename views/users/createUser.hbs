@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Добавление пользователя</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../bower_components\bootstrap\dist\css\bootstrap.css" />
+</head>
+
+<body>
+    {{getNav}}
+  <h1>Добавление пользователя</h1>
+  <form action="addUserHandler" method="POST">
+    <label>Name</label>
+    <input name="name" /><br><br>
+    <label>Address</label>
+    <input name="address" /><br><br>
+    <label>Email</label>
+    <input name="email" type ="email"/><br><br>
+    <input type="submit" value="Send" class="btn btn-primary"/>
+    <a href="/users" class="btn btn-info">Back to all users</a>
+  </form>
+</body>
+<html>

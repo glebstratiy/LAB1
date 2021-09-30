@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Обновление информации о пользователе</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../../bower_components\bootstrap\dist\css\bootstrap.css" />
+</head>
+
+<body>
+    {{getNav}}
+  <h1>Обновление информации о пользователе</h1>
+  <form action="http://localhost:3001/users/updateUserHandler" method="POST">
+    <label>Name</label>
+    <input name="name" /><br><br>
+    <label>Address</label>
+    <input name="address" /><br><br>
+    <label>Email</label>
+    <input name="email" type="email" /><br><br>
+    <input type="hidden" name="id" value="{{id}}" />
+    <input type="submit" value="Send" class="btn btn-primary"/>
+    <a href="/users" class="btn btn-info">Back to all users</a>
+  </form>
+</body>
+<html>

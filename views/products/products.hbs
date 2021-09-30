@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Список продуктов</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.css" />
+
+</head>
+
+<body>
+    {{getNav}}
+
+
+
+  <h1>Список продуктов</h1>
+  <table class="table">
+    <tr>
+      <th>Description</th>
+      <th>Photo</th>
+      <th>Price</th>
+      <th>Size</th>
+      <th>Material</th>
+      <th></th>
+      <th></th>
+    </tr>
+    {{#each products}}
+    <tr>
+      <td>{{description}}</td>
+      <td> <img src={{photoURL}} /> </td>
+      <td>{{price}}</td>
+      <td> {{size.name}}</td>
+      <td> {{material.name}}</td>
+      <td><a href="/products/updateProduct/{{_id}}" class="btn btn-success" > Обновить </a></td>
+      <td>
+        <form action="/products/removeProductHandler" method="POST">
+          <input type="hidden" name="id" value="{{_id}}" />
+          <button type="submit" class="btn btn-danger"> Удалить </button>
+          <button type="submit" class="btn btn-danger"> Детали </button>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+  <a href="/products/createProduct" class="btn btn-primary">Добавить продукт</a>
+</body>
+<html>
